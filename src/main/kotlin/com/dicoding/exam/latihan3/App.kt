@@ -12,6 +12,8 @@
 
 package com.dicoding.exam.latihan3
 
+import kotlin.reflect.typeOf
+
 /**
  *  TODO
  *  Lengkapi fungsi di bawah ini agar dapat mengembalikkan tipe nilai sesuai dengan
@@ -30,7 +32,20 @@ package com.dicoding.exam.latihan3
  *
  */
 fun <T> checkType(args: T): String {
-    return ""
+    return when(args) {
+        is String -> "Yes! it's String"
+        is Boolean -> "Yes! it's Boolean"
+        is Map<*, *> -> "Yes! it's Map"
+        is List<*> -> "Yes! it's List"
+        is Double -> "Yes! it's Double"
+        is Int -> "Yes! it's Integer"
+        else -> "No value"
+    }
+
+//    if(args is String) {
+//        return "Yes! it's String"
+//    }
+//    return "Not ok"
 }
 
 fun main() {
